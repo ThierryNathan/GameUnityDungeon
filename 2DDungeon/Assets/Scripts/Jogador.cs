@@ -75,7 +75,7 @@ public class Jogador : MonoBehaviour
             return;
         }
 
-       float subir = CrossPlatformInputManager.GetAxis("Horizontal"); 
+       float subir = CrossPlatformInputManager.GetAxis("Vertical"); 
        Vector2 direcaoDeSubida = new Vector2(meuRigidBody.velocity.x, subir * velocidadeDeSubida); 
        meuRigidBody.velocity = direcaoDeSubida;
        meuRigidBody.gravityScale = 0f;
