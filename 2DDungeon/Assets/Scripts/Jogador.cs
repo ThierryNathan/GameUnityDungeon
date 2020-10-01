@@ -14,6 +14,7 @@ public class Jogador : MonoBehaviour
     Collider2D meuColisor;
     [SerializeField] float velocidadeDeSubida = 5f;
     float gravidadeInicial;
+    BoxCollider2D colisorDosPes;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class Jogador : MonoBehaviour
         meuAnimator = GetComponent<Animator>();
         meuColisor = GetComponent<Collider2D>();
         gravidadeInicial = meuRigidBody.gravityScale;
+        colisorDosPes = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -54,7 +56,7 @@ public class Jogador : MonoBehaviour
 
     private void Pular()
     {
-        if(!meuColisor.IsTouchingLayers(LayerMask.GetMask("Chao")))
+        if(!colisorDosPes.IsTouchingLayers(LayerMask.GetMask("Chao")))
         {
             return;
         }
@@ -68,7 +70,7 @@ public class Jogador : MonoBehaviour
 
     private void SubirEscadas()
     {
-        if(!meuColisor.IsTouchingLayers(LayerMask.GetMask("Escada")))
+        if(!colisorDosPes.IsTouchingLayers(LayerMask.GetMask("Escada")))
         {
             meuAnimator.SetBool("Escalando", false);
             meuRigidBody.gravityScale = gravidadeInicial; 
