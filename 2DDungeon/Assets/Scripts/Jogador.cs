@@ -15,6 +15,8 @@ public class Jogador : MonoBehaviour
     [SerializeField] float velocidadeDeSubida = 5f;
     float gravidadeInicial;
     BoxCollider2D colisorDosPes;
+    // Direção na qual o jogador é lançado ao morrer.
+    [SerializeField] Vector2 direcaoDeMorte = new Vector2(25f, 25f);
 
     // Start is called before the first frame update
     void Start()
@@ -86,5 +88,15 @@ public class Jogador : MonoBehaviour
        bool jogadorTemVelocidadeVertical = Mathf.Abs(meuRigidBody.velocity.y) > Mathf.Epsilon;
        meuAnimator.SetBool("Escalando", jogadorTemVelocidadeVertical);
 
+    }
+
+    private void Morrer()
+    {
+        if(meuColisor.IsTouchingLayers(LayerMask.GetMask("Inimigo")))
+        {
+            estaVivo = false;
+            meuAnimator.SetTrigger("Morrendo");
+            GetComponent<Rigidbody2D>().velocity = direcaoDeMorte;
+        }
     }
 }
