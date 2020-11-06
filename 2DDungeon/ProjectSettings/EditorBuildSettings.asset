@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: e24b418b0da05c04b9129fca2dc36bff
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 1e8486fd60c913c46a4661eafda1f276
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 7b16b96c1450c994296f54198ce4ef1e
+  - enabled: 1
+    path: Assets/Scenes/Vitoria.unity
+    guid: 7e5be7c17f8a64840ac273446ec45b05
+  - enabled: 1
+    path: Assets/Scenes/Derrota.unity
+    guid: dee5316aa58d9ac44abf0c0cd0a23d38
   m_configObjects: {}

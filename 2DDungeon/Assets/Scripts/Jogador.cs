@@ -31,10 +31,15 @@ public class Jogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(estaVivo == false)
+        {
+            return;
+        }
         Correr();
         GirarSprite();
         Pular();
         SubirEscadas();
+        Morrer();
     }
 
     private void Correr()
@@ -92,11 +97,12 @@ public class Jogador : MonoBehaviour
 
     private void Morrer()
     {
-        if(meuColisor.IsTouchingLayers(LayerMask.GetMask("Inimigo")))
+        if(meuColisor.IsTouchingLayers(LayerMask.GetMask("Inimigos", "Espinhos")))
         {
             estaVivo = false;
             meuAnimator.SetTrigger("Morrendo");
             GetComponent<Rigidbody2D>().velocity = direcaoDeMorte;
+            FindObjectOfType<GerenciadorDeJogo>().ProcessarMorte();
         }
     }
 }

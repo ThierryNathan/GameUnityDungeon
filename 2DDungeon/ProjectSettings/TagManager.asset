@@ -18,8 +18,8 @@ TagManager:
   - Fundo
   - Escada
   - Inimigos
-  - 
-  - 
+  - Espinhos
+  - Interativos
   - 
   - 
   - 
@@ -50,9 +50,15 @@ TagManager:
   - name: Inimigo
     uniqueID: 2801496541
     locked: 0
+  - name: Espinhos
+    uniqueID: 475452323
+    locked: 0
   - name: Jogador
     uniqueID: 2656120435
     locked: 0
   - name: Plataformas
     uniqueID: 169513641
+    locked: 0
+  - name: Interativos
+    uniqueID: 2356242543
     locked: 0
